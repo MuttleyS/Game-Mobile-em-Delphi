@@ -1,0 +1,30 @@
+unit Controller.Ranking;
+
+interface
+
+uses
+   Horse, System.JSON, System.SysUtils, DAO.Ranking;
+
+   procedure RegistrarRotas;
+   procedure Listar(Req : THorseRequest; Res : THorseResponse; Next : Tproc);
+   procedure Inserir(Req : THorseRequest; Res : THorseResponse; Next : Tproc);
+
+implementation
+
+procedure RegistrarRotas;
+begin
+   THorse.Get('/ranking', Listar);
+   THorse.Post('/ranking', Listar);
+end;
+
+procedure Listar(Req : THorseRequest; Res : THorseResponse; Next : Tproc);
+begin
+
+end;
+
+procedure Inserir(Req : THorseRequest; Res : THorseResponse; Next : Tproc);
+begin
+
+end;
+
+end.

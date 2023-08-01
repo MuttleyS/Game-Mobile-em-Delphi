@@ -1,0 +1,5 @@
+object MainServices: TMainServices
+  DisplayName = 'Numbers'
+  Height = 139
+  Width = 181
+end

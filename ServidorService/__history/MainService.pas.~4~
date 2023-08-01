@@ -1,0 +1,48 @@
+unit MainService;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.SvcMgr, Vcl.Dialogs,
+  Horse, Horse.Jhonson, Horse.BasicAuthentication, Controller.Ranking;
+
+type
+  TMainServices = class(TService)
+    procedure ServiceCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    function GetServiceController: TServiceController; override;
+    { Public declarations }
+  end;
+
+var
+  MainServices: TMainServices;
+
+implementation
+
+{$R *.dfm}
+
+procedure ServiceController(CtrlCode: DWord); stdcall;
+begin
+  MainServices.Controller(CtrlCode);
+end;
+
+function TMainServices.GetServiceController: TServiceController;
+begin
+  Result := ServiceController;
+end;
+
+procedure TMainServices.ServiceCreate(Sender: TObject);
+begin
+   THorse.Use(Jhonson());
+   THorse.Use(HorseBasicAuthentication(
+    function(const AUsername, APassword: string): Boolean
+    begin
+       Result := AUsername.Equals('numbers') and APassword.Equals('numbers');
+    end));
+   Controller.Ranking.RegistrarRotas;
+   THorse.Listen(9000);
+end;
+
+end.

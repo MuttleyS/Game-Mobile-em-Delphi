@@ -1,0 +1,63 @@
+object FrameRanking: TFrameRanking
+  Align = Client
+  Size.Width = 256.000000000000000000
+  Size.Height = 55.000000000000000000
+  Size.PlatformDefault = False
+  object imgPosicao: TImage
+    MultiResBitmap = <
+      item
+      end>
+    Align = Left
+    Margins.Right = 10.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 55.000000000000000000
+    Size.PlatformDefault = False
+    object lbPosicao: TLabel
+      Align = Center
+      StyledSettings = [Family]
+      Size.Width = 46.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Center
+      Text = '01'
+      TabOrder = 0
+    end
+  end
+  object lytJogador: TLayout
+    Align = Client
+    Size.Width = 196.000000000000000000
+    Size.Height = 55.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object lbNomeJogador: TLabel
+      Align = Top
+      StyledSettings = [Family]
+      Size.Width = 196.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+      TextSettings.FontColor = claWhite
+      TextSettings.VertAlign = Leading
+      Text = 'Emanuel'
+      TabOrder = 1
+    end
+    object lbPtsJogador: TLabel
+      Align = Top
+      StyledSettings = [Family]
+      Position.Y = 25.000000000000000000
+      Size.Width = 196.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+      TextSettings.FontColor = claWhite
+      TextSettings.VertAlign = Trailing
+      Text = 'Pts. 3000'
+      TabOrder = 0
+    end
+  end
+end

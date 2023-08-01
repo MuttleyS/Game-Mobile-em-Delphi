@@ -1,0 +1,214 @@
+unit Principal;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Controls.Presentation,
+  FMX.StdCtrls, FMX.Objects,
+  {$IFDEF ANDROID}
+  Execute.FMXBasedDragDrop,
+  {$ENDIF}
+  FMX.Layouts, FMX.Ani;
+
+type
+  TFrmPrincipal = class(TForm)
+    lytToolBar: TLayout;
+    rectVoltar: TRectangle;
+    rectPlacar: TRectangle;
+    lbDescPlacar: TLabel;
+    lbPlacar: TLabel;
+    imgVoltar: TImage;
+    lytNivel: TLayout;
+    lbDescNivel: TLabel;
+    lbNivel: TLabel;
+    glytQuadrados: TGridLayout;
+    rectQuadradoAa: TRectangle;
+    lbQuadradoAa: TLabel;
+    rectQuadradoAb: TRectangle;
+    lbQuadradoAb: TLabel;
+    rectQuadradoAc: TRectangle;
+    lbQuadradoAc: TLabel;
+    rectQuadradoAd: TRectangle;
+    lbQuadradoAd: TLabel;
+    rectQuadradoBa: TRectangle;
+    lbQuadradoBa: TLabel;
+    rectQuadradoBb: TRectangle;
+    lbQuadradoBb: TLabel;
+    rectQuadradoBc: TRectangle;
+    lbQuadradoBc: TLabel;
+    rectQuadradoBd: TRectangle;
+    lbQuadradoBd: TLabel;
+    rectQuadradoCa: TRectangle;
+    lbQuadradoCa: TLabel;
+    rectQuadradoCb: TRectangle;
+    lbQuadradoCb: TLabel;
+    rectQuadradoCc: TRectangle;
+    lbQuadradoCc: TLabel;
+    rectQuadradoCd: TRectangle;
+    lbQuadradoCd: TLabel;
+    rectQuadradoDa: TRectangle;
+    lbQuadradoDa: TLabel;
+    rectQuadradoDb: TRectangle;
+    lbQuadradoDb: TLabel;
+    rectQuadradoDc: TRectangle;
+    lbQuadradoDc: TLabel;
+    rectQuadradoDd: TRectangle;
+    lbQuadradoDd: TLabel;
+    rectQuadradoEa: TRectangle;
+    lbQuadradoEa: TLabel;
+    rectQuadradoEb: TRectangle;
+    lbQuadradoEb: TLabel;
+    rectQuadradoEc: TRectangle;
+    lbQuadradoEc: TLabel;
+    rectQuadradoEd: TRectangle;
+    lbQuadradoEd: TLabel;
+    flAnimacao: TFloatAnimation;
+    TimerLevel: TTimer;
+    procedure rectVoltarClick(Sender: TObject);
+    procedure lbQuadradoAaDragDrop(Sender: TObject; const Data: TDragObject; const Point: TPointF);
+    procedure lbQuadradoAaDragOver(Sender: TObject; const Data: TDragObject; const Point: TPointF; var Operation: TDragOperation);
+    procedure FormShow(Sender: TObject);
+    procedure FormResize(Sender: TObject);
+    procedure flAnimacaoFinish(Sender: TObject);
+    procedure TimerLevelTimer(Sender: TObject);
+  private
+   procedure SomarPontos(_APontos : Integer);
+   procedure Reset;
+   procedure ExecuteAcao(AAcao : string);
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmPrincipal: TFrmPrincipal;
+
+implementation
+
+uses
+   GameOver;
+
+{$R *.fmx}
+
+
+procedure TFrmPrincipal.ExecuteAcao(AAcao : string);
+begin
+   if AAcao='PLAY' then
+      Reset
+   else begin
+      if AAcao='EXIT' then
+         Close;
+   end;
+end;
+
+procedure TFrmPrincipal.flAnimacaoFinish(Sender: TObject);
+var
+   I, ACount : Integer;
+   ALables : TLabel;
+   AArryNum : Array of Integer;
+begin
+   ACount := 0;
+   for I := 0 to glytQuadrados.ChildrenCount - 1 do begin
+      ALables := TLabel(TRectangle(glytQuadrados.Children[I]).Children[0]);
+      if ALables.Tag = 0 then begin
+         Inc(ACount);
+         SetLength(AArryNum, ACount);
+         AArryNum[ACount - 1] := I;
+      end;
+   end;
+   if ACount > 0 then begin
+      I := Random(Length(AArryNum));
+      ALables := TLabel(TRectangle(glytQuadrados.Children[AArryNum[I]]).Children[0]);
+      ALables.Text := '2';
+      ALables.Tag := 2;
+      flAnimacao.Start;
+   end else begin
+      TimerLevel.Enabled := False;
+      flAnimacao.Enabled := False;
+      if not Assigned(FrmGameOver) then
+         Application.CreateForm(TFrmGameOver, FrmGameOver);
+      FrmGameOver.ExecuteOnClose := ExecuteAcao;
+      FrmGameOver.lbPlacar.Text := lbPlacar.Text;
+      FrmGameOver.Show;
+   end;
+end;
+
+procedure TFrmPrincipal.FormResize(Sender: TObject);
+begin
+   glytQuadrados.ItemWidth := Trunc(glytQuadrados.Width/4) - 1;
+   glytQuadrados.ItemHeight := Trunc(glytQuadrados.Height/5) - 1;
+end;
+
+procedure TFrmPrincipal.FormShow(Sender: TObject);
+begin
+   Reset;
+end;
+
+procedure TFrmPrincipal.lbQuadradoAaDragDrop(Sender: TObject; const Data: TDragObject; const Point: TPointF);
+var
+   LbDestino, LbOrigem : TLabel;
+begin
+   LbDestino := TLabel(Sender);
+   LbOrigem := TLabel(Data.Source);
+   if (LbOrigem.Tag > 0) and (LbDestino.Tag > 0) then begin
+      SomarPontos(LbDestino.Tag);
+      LbDestino.Tag := LbDestino.Tag + LbOrigem.Tag;
+      LbDestino.Text := LbDestino.Tag.ToString;
+      LbOrigem.Tag := 0;
+      LbOrigem.Text := '';
+   end;
+end;
+
+procedure TFrmPrincipal.lbQuadradoAaDragOver(Sender: TObject; const Data: TDragObject; const Point: TPointF; var Operation: TDragOperation);
+var
+   LabelDestino, LabelOrigem : TLabel;
+begin
+   Operation := TDragOperation.None;
+   if (Sender is TLabel) and (Data.Source is TLabel) and (Data.Source <> Sender)  then begin
+      if (TLabel(Data.Source).Tag = TLabel(Sender).Tag) and (TLabel(Sender).Tag > 0) then
+         Operation := TDragOperation.Move;
+   end;
+end;
+
+procedure TFrmPrincipal.rectVoltarClick(Sender: TObject);
+begin
+   TimerLevel.Enabled := False;
+   flAnimacao.Enabled := False;
+   Close;
+end;
+
+procedure TFrmPrincipal.SomarPontos(_APontos: Integer);
+begin
+   lbPlacar.Text := IntToStr(lbPlacar.Text.ToInteger + _APontos);
+end;
+
+procedure TFrmPrincipal.TimerLevelTimer(Sender: TObject);
+begin
+   lbNivel.Tag := lbNivel.Tag + 1;
+   lbNivel.Text := lbNivel.Tag.ToString;
+   flAnimacao.Duration := flAnimacao.Duration - 0.05;
+end;
+
+procedure TFrmPrincipal.Reset;
+var
+   Labels : TLabel;
+   Rectangles : TRectangle;
+   I : Integer;
+begin
+   lbPlacar.Text := '0';
+   lbNivel.Text := '1';
+   lbNivel.Tag := 1;
+   flAnimacao.Duration := 1;
+   for I := 0 to glytQuadrados.ChildrenCount - 1 do begin
+      if glytQuadrados.Children[I] is TRectangle then begin
+         Rectangles := TRectangle(glytQuadrados.Children[I]);
+         Labels := TLabel(Rectangles.Children[0]);
+         Labels.Text := '';
+         Labels.Tag := 0;
+      end;
+   end;
+   flAnimacao.Start;
+   TimerLevel.Enabled := True;
+end;
+
+end.

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/06/15 20:16:48.000.165,=C:\Users\lazza\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/06/15 20:18:00.000.126,C:\Users\lazza\Documents\Embarcadero\Studio\Projects\Unit1.fmx=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Menu.fmx</Transaction>
+    <Transaction>2023/06/15 20:18:00.000.126,C:\Users\lazza\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Menu.pas</Transaction>
+    <Transaction>2023/06/15 20:18:01.000.163,C:\Users\lazza\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Project1.dproj</Transaction>
+    <Transaction>2023/06/15 20:18:16.000.806,C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Project1.dproj=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Numbers.dproj</Transaction>
+    <Transaction>2023/06/15 20:44:45.000.333,=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Unit1.pas</Transaction>
+    <Transaction>2023/06/15 20:45:49.000.050,C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Unit1.fmx=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Principal.fmx</Transaction>
+    <Transaction>2023/06/15 20:45:49.000.050,C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Unit1.pas=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Principal.pas</Transaction>
+    <Transaction>2023/06/20 22:45:55.000.874,=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Unit1.pas</Transaction>
+    <Transaction>2023/06/20 22:46:36.000.971,C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Unit1.fmx=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\GameOver.fmx</Transaction>
+    <Transaction>2023/06/20 22:46:36.000.971,C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Unit1.pas=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\GameOver.pas</Transaction>
+    <Transaction>2023/06/20 23:23:59.000.285,=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Unit1.pas</Transaction>
+    <Transaction>2023/06/20 23:24:05.000.343,C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Unit1.fmx=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Ranking.fmx</Transaction>
+    <Transaction>2023/06/20 23:24:05.000.343,C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Unit1.pas=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Ranking.pas</Transaction>
+    <Transaction>2023/06/20 23:30:11.000.106,=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Unit1.pas</Transaction>
+    <Transaction>2023/06/20 23:31:31.000.513,C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Unit1.fmx=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\ListRanking.fmx</Transaction>
+    <Transaction>2023/06/20 23:31:31.000.513,C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Unit1.pas=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\ListRanking.pas</Transaction>
+    <Transaction>2023/06/25 21:13:44.000.460,=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Uteis\uLoading.pas</Transaction>
+  </Transactions>
+</BorlandProject>

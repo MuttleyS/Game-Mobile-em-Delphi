@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/06/24 03:24:12.000.037,=C:\Users\lazza\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/06/24 21:01:32.000.060,=C:\Users\lazza\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/06/24 22:44:43.000.159,C:\Users\lazza\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Servidor\Principal.pas</Transaction>
+    <Transaction>2023/06/24 22:44:43.000.159,C:\Users\lazza\Documents\Embarcadero\Studio\Projects\Unit1.fmx=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Servidor\Principal.fmx</Transaction>
+    <Transaction>2023/06/24 22:44:48.000.257,C:\Users\lazza\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Servidor\Server.dproj</Transaction>
+    <Transaction>2023/06/24 23:06:41.000.888,=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Servidor\DAO\DAO.Connection.pas</Transaction>
+    <Transaction>2023/06/24 23:13:21.000.703,=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Servidor\Unit1.pas</Transaction>
+    <Transaction>2023/06/24 23:13:31.000.496,C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Servidor\Unit1.pas=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Servidor\DAO\DAO.Ranking.pas</Transaction>
+    <Transaction>2023/06/25 00:33:16.000.336,=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Servidor\Unit1.pas</Transaction>
+    <Transaction>2023/06/25 00:33:39.000.980,C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Servidor\Controller\Controller.Ranking.pas=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Servidor\Unit1.pas</Transaction>
+    <Transaction>2023/06/25 21:12:57.000.658,=C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Uteis\uLoading.pas</Transaction>
+    <Transaction>2023/06/25 21:13:31.000.983,C:\Users\lazza\Desktop\trunk_cursos\Game Mobile em Delphi\Fontes\Uteis\uLoading.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

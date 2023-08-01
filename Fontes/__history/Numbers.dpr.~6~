@@ -1,0 +1,18 @@
+program Numbers;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  Menu in 'Menu.pas' {FrmNumbers},
+  Principal in 'Principal.pas' {FrmPrincipal},
+  GameOver in 'GameOver.pas' {FrmGameOver};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.FormFactor.Orientations := [TFormOrientation.Portrait];
+  Application.CreateForm(TFrmNumbers, FrmNumbers);
+  Application.CreateForm(TFrmGameOver, FrmGameOver);
+  Application.Run;
+end.

@@ -1,0 +1,93 @@
+unit GameOver;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, RESTRequest4D,
+  FMX.Objects, FMX.Controls.Presentation, FMX.StdCtrls, FMX.Layouts, System.JSON,
+  FMX.Edit;
+
+type
+   TCallBackGameOver = procedure(AAcao : string) of object;
+  TFrmGameOver = class(TForm)
+    rectSair: TRectangle;
+    imgSair: TImage;
+    imgGameOver: TImage;
+    lytPlacar: TLayout;
+    lbDescPlacar: TLabel;
+    lbPlacar: TLabel;
+    rectReplay: TRectangle;
+    imgReplay: TImage;
+    lbReplay: TLabel;
+    lytFundo: TLayout;
+    rectFundo: TRectangle;
+    rectVoltar: TRectangle;
+    imgVoltar: TImage;
+    Rectangle2: TRectangle;
+    Label1: TLabel;
+    eJogador: TEdit;
+    lbJogador: TLabel;
+    lytNivel: TLayout;
+    lbDescNivel: TLabel;
+    lbNivel: TLabel;
+    procedure rectReplayClick(Sender: TObject);
+    procedure rectSairClick(Sender: TObject);
+    procedure rectVoltarClick(Sender: TObject);
+    procedure Rectangle2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+   ExecuteOnClose : TCallBackGameOver;
+    { Public declarations }
+  end;
+
+var
+  FrmGameOver: TFrmGameOver;
+
+implementation
+
+{$R *.fmx}
+
+procedure TFrmGameOver.rectVoltarClick(Sender: TObject);
+begin
+   lytFundo.Visible := False;
+end;
+
+procedure TFrmGameOver.Rectangle2Click(Sender: TObject);
+var
+   Resp : IResponse;
+   Json : TJSONObject;
+begin
+   try
+      Json := TJSONObject.Create;
+      Json.AddPair('nome', eJogador.Text);
+      Json.AddPair('level', TJSONNumber.Create(lbNivel.Text));
+      Json.AddPair('pontos', TJSONNumber.Create(lbPlacar.Text));
+
+      Resp := TRequest.New.BaseURL('http://localhost:9000')
+              .Resource('ranking')
+              .BasicAuthentication('numbers', 'numbers')
+              .AddBody(Json.ToJSON)
+              .Accept('application/json')
+              .Post;
+   finally
+      Json.DisposeOf;
+   end;
+end;
+
+procedure TFrmGameOver.rectReplayClick(Sender: TObject);
+begin
+   Close;
+   if Assigned(ExecuteOnClose) then
+      ExecuteOnClose('PLAY');
+end;
+
+procedure TFrmGameOver.rectSairClick(Sender: TObject);
+begin
+   Close;
+   if Assigned(ExecuteOnClose) then
+      ExecuteOnClose('EXIT');
+end;
+
+end.

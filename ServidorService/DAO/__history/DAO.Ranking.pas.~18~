@@ -1,0 +1,63 @@
+unit DAO.Ranking;
+
+interface
+
+uses
+   FireDAC.Comp.Client, FireDAC.DApt, Data.DB, System.JSON, System.SysUtils, System.StrUtils, DAO.Connection,
+   DataSet.Serialize;
+
+type
+   TRanking = class
+      private
+         FConn : TFDConnection;
+      public
+         constructor Create;
+         destructor Destroy; override;
+         function Listar (Num_Rows : Integer): TJSONArray;
+         procedure Adicionar;
+   end;
+
+
+implementation
+
+procedure TRanking.Adicionar;
+begin
+
+end;
+
+function TRanking.Listar (Num_Rows : Integer): TJSONArray;
+var
+   Query : TFDQuery;
+begin
+   try
+      Query := TFDQuery.Create(nil);
+      Query.Connection := FConn;
+      with Query do begin
+         Active := False;
+         SQL.Clear;
+         SQL.Add('select * from TABRANKING');
+         SQL.Add('order by pontos desc');
+         if Num_Rows > 0 then
+            SQL.Add('limit' + Num_Rows.ToString);
+         Active := True;
+      end;
+      Result := Query
+   finally
+      Query.Free;
+   end;
+
+end;
+
+constructor TRanking.Create;
+begin
+   FConn := TConnection.CreateConnection;
+end;
+
+destructor TRanking.Destroy;
+begin
+   if Assigned(FConn) then
+      FConn.Free;
+   inherited;
+end;
+
+end.

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/06/24 03:24:12.000.037,=C:\Users\lazza\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/08/01 18:51:02.000.331,=C:\Users\lazza\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/08/01 18:52:04.000.764,=C:\Users\lazza\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/08/01 18:52:48.000.683,C:\Users\lazza\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\lazza\Desktop\Projetos\Game Mobile em Delphi\ServidorService\MainService.pas</Transaction>
+    <Transaction>2023/08/01 18:52:48.000.683,C:\Users\lazza\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\lazza\Desktop\Projetos\Game Mobile em Delphi\ServidorService\MainService.dfm</Transaction>
+    <Transaction>2023/08/01 18:53:04.000.618,C:\Users\lazza\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\lazza\Desktop\Projetos\Game Mobile em Delphi\ServidorService\ServerNumbers.dproj</Transaction>
+    <Transaction>2023/08/01 18:54:50.000.803,=C:\Users\lazza\Desktop\Projetos\Game Mobile em Delphi\ServidorService\DAO\DAO.Connection.pas</Transaction>
+    <Transaction>2023/08/01 18:54:50.000.876,=C:\Users\lazza\Desktop\Projetos\Game Mobile em Delphi\ServidorService\DAO\DAO.Ranking.pas</Transaction>
+    <Transaction>2023/08/01 18:55:05.000.470,=C:\Users\lazza\Desktop\Projetos\Game Mobile em Delphi\ServidorService\Controller\Controller.Ranking.pas</Transaction>
+    <Transaction>2023/08/01 19:02:22.000.951,C:\Users\lazza\Desktop\Projetos\Game Mobile em Delphi\ServidorService\Controller\Controller.Ranking.pas=C:\Users\lazza\Desktop\Projetos\Game Mobile em Delphi\ServidorService\Controller\Controllers.Ranking.pas</Transaction>
+  </Transactions>
+</BorlandProject>
